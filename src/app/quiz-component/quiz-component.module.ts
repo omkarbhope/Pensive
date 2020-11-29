@@ -7,8 +7,10 @@ import { MatCardModule } from '@angular/material/card';
 import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 // MDB Angular Pro
 import { ButtonsModule, CardsModule } from 'angular-bootstrap-md';
+import { QuestionCardComponent } from './question-card/question-card.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
 @NgModule({
-  declarations: [ExamCardComponent],
+  declarations: [ExamCardComponent, QuestionCardComponent, HomeComponentComponent],
   imports: [
     CommonModule,
     QuizComponentRoutingModule,

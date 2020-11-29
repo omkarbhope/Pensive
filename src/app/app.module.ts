@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { PageLoaderComponent } from './layout/page-loader/page-loader.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    
+    FormsModule,
+    HttpClientModule,
     
   ],
   providers: [],

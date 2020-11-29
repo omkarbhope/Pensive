@@ -1,0 +1,18 @@
+<div class="card" style="padding:20px">
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="questionData.length" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    
+    <div class="card bg-info" *ngFor="let data of questionData" style="margin:20px">
+      <div class="card-body">
+        <h1>Q. {{data.QSN}}</h1>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">1.{{data.OPTION1}}</li>
+          <li class="list-group-item">2.{{data.OPTION2}}</li>
+          <li class="list-group-item">3.{{data.OPTION3}}</li>
+          <li class="list-group-item">4.{{data.OPTION4}}</li>
+        </ul> 
+      </div>
+    </div>
+  </div>
+  
