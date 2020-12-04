@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ExamCardComponent } from './exam-card/exam-card.component';
 import { QuestionCardComponent } from './question-card/question-card.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
+import { ResultCardComponent } from './result-card/result-card.component';
+import { ContactCardComponent } from './contact-card/contact-card.component';
 
 
 const routes: Routes = [
@@ -13,8 +15,18 @@ const routes: Routes = [
   },
 
   {
+    path: 'contact-card',
+    component: ContactCardComponent
+  },
+
+  {
     path: 'question-card',
     component: QuestionCardComponent
+  }, 
+
+  {
+    path: 'result-card',
+    component: ResultCardComponent
   }, 
 
   {

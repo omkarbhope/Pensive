@@ -1,0 +1,92 @@
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row" >
+                    <h2 align="center">Completed!</h2><br>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                        <div>
+                            <div class="card-image">
+                              <img src="../../assets/trophy.png" style="width: 250px;height : 250px; float:right">
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div >
+                            <div >
+                                <div >
+                                    <div >
+                                        <h3 >{{quizService.correctAnswerCount}}/{{quizService.qns.length}}</h3>
+                                        <span >Time Elapsed : {{quizService.displayTimeElapsed()}}</span>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col" style="margin:20px;">
+                                            <button class="btn btn-primary">Submit</button>
+                                          </div>
+                                          <div class="col" style="margin:20px;">
+                                            <button class="btn btn-danger" (click)="Reset()">Reset</button>
+                                          </div>
+                                      </div>
+                                      
+                                </div>
+                            </div>
+            </div>
+        </div>
+        <div class="card col-8 offset-2">
+            <div class="card-body" style="margin:20px;">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Questions with correct answer</h3>
+            <ng-container *ngFor="let qn of quizService.qns;let i=index">
+                <div class="card col-12 blue-grey darken-1 " style="margin:20px;">
+                    <div class="card-body white-text">
+                        <span class="card-title"></span>
+                        <p>Q.{{i+1}} {{qn.QSN}}</p>
+                    </div>
+        
+                    <div class="card col-12" >
+                        <ul class="list-group list-group-flush">
+                            <ng-container >
+                                <li *ngIf="qn.OPTION1 != null" class="list-group-item">
+                                    {{qn.OPTION1}}
+                                    <span class="badge" *ngIf="qn.correct==1">
+                                        <i class="material-icons green-text">check_circle</i>
+                                    </span>
+                                    <span class="badge red-text" *ngIf="qn.answer==1 && qn.correct!=1">Incorrect</span>
+                                </li>
+                                <li *ngIf="qn.OPTION2 != null" class="list-group-item">
+                                    {{qn.OPTION2}}
+                                    <span class="badge" *ngIf="qn.correct==2">
+                                        <i class="material-icons green-text">check_circle</i>
+                                    </span>
+                                    <span class="badge red-text" *ngIf="qn.answer==2 && qn.correct!=2">Incorrect</span>
+                                </li>
+                                <li *ngIf="qn.OPTION3 != null" class="list-group-item">
+                                    {{qn.OPTION3}}
+                                    <span class="badge" *ngIf="qn.correct==3">
+                                        <i class="material-icons green-text">check_circle</i>
+                                    </span>
+                                    <span class="badge red-text" *ngIf="qn.answer==3 && qn.correct!=3">Incorrect</span>
+                                </li>
+                                <li *ngIf="qn.OPTION4 != null" class="list-group-item">
+                                    {{qn.OPTION4}}
+                                    <span class="badge" *ngIf="qn.correct==4">
+                                        <i class="material-icons green-text">check_circle</i>
+                                    </span>
+                                    <span class="badge red-text" *ngIf="qn.answer==4 && qn.correct!=4">Incorrect</span>
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </div>
+                </div>
+            </ng-container>
+                    </div>
+                </div>
+                        
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        

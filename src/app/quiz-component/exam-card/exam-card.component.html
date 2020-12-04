@@ -1,13 +1,22 @@
-<div class="card" style="padding:20px">
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="questionData.length" aria-valuemin="0" aria-valuemax="100"></div>
-  </div>
-  
-  <div class="card bg-info" *ngFor="let data of examData" style="margin:20px" >
-    <div class="card-body" routerLink="/quiz-component/home-component">
-      <h1>{{data.EXAM_ID}}</h1>
-      <h1>{{data.EXAM_NAME}}</h1>
-    </div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" align="center">Welcome to Quizzer</h1>
+    <p class="lead" align="center"> Get ready to Compete.</p>
   </div>
 </div>
+
+<div class="card" style="padding:20px">
+  <H1 align="center">EXAMS AVAILABLE:-</H1>
+  <div class="row">
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 " *ngFor="let data of examData;" style="margin:20px">
+      <div class="card bg-secondary"  align="center">
+        <div class="card-body" routerLink="/quiz-component/question-card">
+          <h1 align="center">{{data.EXAM_NAME}}</h1>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+
+
 

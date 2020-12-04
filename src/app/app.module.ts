@@ -10,7 +10,7 @@ import { PageLoaderComponent } from './layout/page-loader/page-loader.component'
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +25,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     NgxSpinnerModule,
     FormsModule,
     HttpClientModule,
-    
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { QuizServiceService } from 'src/app/services/quiz-service.service';
 
 @Component({
@@ -9,15 +10,36 @@ import { QuizServiceService } from 'src/app/services/quiz-service.service';
 })
 export class QuestionCardComponent implements OnInit {
 
-  questionData: any = [];
-  constructor(private quizService: QuizServiceService) { 
-    this.quizService.getQuestionData().subscribe((data: []) => {
-      this.questionData = data;
-      console.log(this.questionData);
+  answerData: any = [];
+  answers = [];
+  constructor(private router: Router,public quizService: QuizServiceService) { };
+  ngOnInit(): void {
+    this.quizService.seconds = 0;
+    this.quizService.qnProgress = 0;
+    this.quizService.getQuestionData().subscribe((data: any) => {
+      this.quizService.qns = data;
+      this.startTimer();
     });
+    
   }
 
-  ngOnInit(): void {
+  startTimer() {
+    this.quizService.timer = setInterval(() => {
+      this.quizService.seconds++;
+    },1000);
   }
+
+  Answer(QnID,choice) {
+    this.quizService.qns[this.quizService.qnProgress].answer = choice;
+    this.quizService.qnProgress++;
+    if (this.quizService.qnProgress == this.quizService.qns.length) {
+      clearInterval(this.quizService.timer);
+      this.router.navigate(['/quiz-component/result-card']);
+    }
+  }
+
+  
+
+  
 
 }
